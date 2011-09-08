@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ketchup.Web">
+      <HintPath>..\..\packages\Ketchup.Web.1.0\lib\net40\Ketchup.Web.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\..\packages\NSubstitute.1.1.0.0\lib\35\NSubstitute.dll</HintPath>
     </Reference>
@@ -55,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteTestBase.cs" />
     <Compile Include="RouteTestingExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

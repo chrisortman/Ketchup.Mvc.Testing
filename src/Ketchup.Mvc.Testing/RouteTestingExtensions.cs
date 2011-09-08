@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Ketchup.Web.Routing;
 using NSubstitute;
 using Shouldly;
 
@@ -197,6 +198,30 @@ namespace Ketchup.Mvc.Testing
             }
 
             return null;
+        }
+
+         public static RouteData ShouldMapToWebFormsPage(this string relativeUrl, string webFormsVirtualPath = null)
+        {
+            var route = relativeUrl.Route();
+
+            if(webFormsVirtualPath == null)
+            {
+                webFormsVirtualPath = relativeUrl;
+            }
+
+            route.RouteHandler.ShouldBeTypeOf(typeof(PageRouteHandler));
+             ((PageRouteHandler) route.RouteHandler).VirtualPath.ShouldBe(webFormsVirtualPath);
+            return route;
+        }
+
+        public static RouteData ShouldRedirectTo(this string relativeUrl, string newUrl)
+        {
+            var routeData = relativeUrl.Route();
+            routeData.RouteHandler.ShouldBeTypeOf(typeof(RedirectRouteHandler));
+
+            ((RedirectRouteHandler) routeData.RouteHandler).RedirectToUrl.ShouldBe(newUrl);
+
+            return routeData;
         }
 
         private static HttpContextBase FakeHttpContext(string requestUrl, string appPath = "/", string httpMethod = "GET")
