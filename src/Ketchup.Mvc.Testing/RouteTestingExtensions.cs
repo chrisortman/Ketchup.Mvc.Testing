@@ -252,7 +252,7 @@ namespace Ketchup.Mvc.Testing
             return context;
         }
 
-        internal static UrlHelper GetUrlHelper(string appPath = "/", RouteCollection routes = null)
+        public static UrlHelper GetUrlHelper(string appPath = "/", RouteCollection routes = null)
         {
             if(routes == null)
             {

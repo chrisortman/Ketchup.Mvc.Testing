@@ -1,0 +1,2 @@
+* Get rid of case sensitivity in matches
+* make usage of / ~/ etc consistent.

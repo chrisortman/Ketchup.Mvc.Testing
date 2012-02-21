@@ -5,6 +5,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{534A7518-D821-47EE-9BBF-909E56E61598}"
 	ProjectSection(SolutionItems) = preProject
 		src\Ketchup.Mvc.Testing\Ketchup.Mvc.Testing.nuspec = src\Ketchup.Mvc.Testing\Ketchup.Mvc.Testing.nuspec
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Global
